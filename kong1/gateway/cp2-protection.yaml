@@ -1,0 +1,16 @@
+_format_version: "3.0"
+_info:
+  select_tags:
+    - platform-team
+
+plugins:
+  - name: service-protection
+    service: shared-service
+    config:
+      window_size:
+        - 60
+      limit:
+        - 10
+      namespace: platform-team
+    tags: # _infoに書いてあるため省略可能
+      - platform-team

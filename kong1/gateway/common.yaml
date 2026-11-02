@@ -1,0 +1,20 @@
+_format_version: "3.0"
+_info:
+  select_tags:
+    - platform-team
+
+services:
+  - name: shared-service
+    url: https://backend.internal
+    tags:
+      - platform-team
+    routes:
+      - name: shared-route
+        paths:
+          - /api
+        tags:
+          - platform-team
+    plugins:
+      - name: key-auth
+        tags: # _infoに書いてあるため省略可能
+          - platform-team
