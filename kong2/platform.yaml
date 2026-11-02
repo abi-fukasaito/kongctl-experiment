@@ -1,0 +1,20 @@
+# 変数
+_defaults:
+  kongctl:
+    namespace: default
+
+control_planes:
+  - ref: cp1 # このファイル内での名前
+    name: "fuka-test-cp1" # Konnect上に表示される名前
+    _deck:
+      files:
+        - "gateway/common.yaml"        # 共通設定
+        - "gateway/cp1-ratelimit.yaml" # CP1 固有設定
+
+  - ref: cp2
+    name: "fuka-test-cp2"
+    _deck:
+      files:
+        - "gateway/common.yaml"          # 共通設定（同じファイルを参照）
+        - "gateway/cp2-protection.yaml"  # CP2 固有設定
+

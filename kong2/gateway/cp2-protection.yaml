@@ -1,0 +1,28 @@
+_format_version: "3.0"
+_info:
+  select_tags:
+    - platform-team
+
+services:
+  - name: test-service2
+    url: https://backend.internal-2
+    tags:
+      - platform-team
+    routes:
+      - name: shared-route
+        paths:
+          - /api
+        tags:
+          - platform-team
+
+plugins:
+  - name: service-protection
+    service: test-service2
+    config:
+      window_size:
+        - 60
+      limit:
+        - 10
+      namespace: platform-team
+    tags: # _infoに書いてあるため省略可能
+      - platform-team

@@ -1,0 +1,9 @@
+_format_version: "3.0"
+_info:
+  select_tags:
+    - platform-team
+
+plugins:
+  - name: key-auth
+    tags: # _infoに書いてあるため省略可能
+      - platform-team
