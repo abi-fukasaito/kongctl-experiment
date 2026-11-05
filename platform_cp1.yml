@@ -1,0 +1,11 @@
+_defaults:
+  kongctl:
+    namespace: default
+
+control_planes:
+  - ref: cp1 
+    name: "fuka-test-cp1"            # Konnect上に表示される名前
+    _deck:
+      files:
+        - "gateway/common.yml"      # 共通設定
+        - "gateway/cp1.yml"         # CP1 固有設定

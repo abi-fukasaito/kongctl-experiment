@@ -3,9 +3,21 @@ _info:
   select_tags:
     - platform-team
 
+services:
+  - name: test-service1
+    url: https://backend.internal-1
+    tags:
+      - platform-team
+    routes:
+      - name: test-route1
+        paths:
+          - /route1
+        tags:
+          - platform-team
+
 plugins:
   - name: rate-limiting-advanced
-    service: shared-service
+    service: test-service1
     config:
       limit:
         - 500
@@ -15,5 +27,5 @@ plugins:
       disable_penalty: false
       namespace: platform-team
       strategy: local
-    tags: # _infoに書いてあるため省略可能
+    tags:
       - platform-team

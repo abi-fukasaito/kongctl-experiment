@@ -9,9 +9,20 @@ services:
     tags:
       - platform-team
     routes:
-      - name: shared-route
+      - name: test-route2
         paths:
-          - /api
+          - /route2
+        tags:
+          - platform-team
+  
+  - name: test-service3
+    url: https://backend.internal-3
+    tags:
+      - platform-team
+    routes:
+      - name: test-route3
+        paths:
+          - /route3
         tags:
           - platform-team
 
@@ -24,5 +35,5 @@ plugins:
       limit:
         - 10
       namespace: platform-team
-    tags: # _infoに書いてあるため省略可能
+    tags: 
       - platform-team

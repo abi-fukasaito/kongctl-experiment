@@ -5,5 +5,5 @@ _info:
 
 plugins:
   - name: key-auth
-    tags: # _infoに書いてあるため省略可能
+    tags:
       - platform-team

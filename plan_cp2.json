@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "generated_at": "2026-11-04T08:24:37.399733789Z",
+    "generator": "kongctl/1.21.0",
+    "mode": "sync",
+    "sync_scope": {
+      "root_resource_types": [
+        "control_plane"
+      ]
+    }
+  },
+  "changes": [
+    {
+      "id": "1:c:control_plane:cp2",
+      "resource_type": "control_plane",
+      "resource_ref": "cp2",
+      "action": "CREATE",
+      "fields": {
+        "name": "fuka-test-cp2"
+      },
+      "protection": false,
+      "namespace": "fuka-test"
+    },
+    {
+      "id": "2:e:_deck:cp2",
+      "resource_type": "_deck",
+      "resource_ref": "cp2",
+      "action": "EXTERNAL_TOOL",
+      "fields": {
+        "control_plane_id": "",
+        "control_plane_name": "fuka-test-cp2",
+        "control_plane_ref": "cp2",
+        "deck_base_dir": ".",
+        "files": [
+          "gateway/common.yaml",
+          "gateway/cp2.yaml"
+        ],
+        "flags": null
+      },
+      "namespace": "",
+      "depends_on": [
+        "1:c:control_plane:cp2"
+      ]
+    }
+  ],
+  "execution_order": [
+    "1:c:control_plane:cp2",
+    "2:e:_deck:cp2"
+  ],
+  "execution_groups": [
+    [
+      "1:c:control_plane:cp2"
+    ],
+    [
+      "2:e:_deck:cp2"
+    ]
+  ],
+  "summary": {
+    "total_changes": 2,
+    "by_action": {
+      "CREATE": 1,
+      "EXTERNAL_TOOL": 1
+    },
+    "by_resource": {
+      "_deck": 1,
+      "control_plane": 1
+    },
+    "by_external_tools": {
+      "_deck": [
+        {
+          "control_plane_ref": "cp2",
+          "control_plane_name": "fuka-test-cp2",
+          "files": [
+            "gateway/common.yaml",
+            "gateway/cp2.yaml"
+          ],
+          "deck_base_dir": "."
+        }
+      ]
+    }
+  }
+}

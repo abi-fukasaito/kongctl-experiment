@@ -1,0 +1,13 @@
+_defaults:
+  kongctl:
+    namespace: fuka-test
+
+control_planes:
+  - ref: cp2
+    name: "fuka-test-cp2"
+    kongctl:
+      namespace: fuka-test
+    _deck:
+      files:
+        - "gateway/common.yml"    # 共通設定（同じファイルを参照）
+        - "gateway/cp2.yml"  # CP2 固有設定
